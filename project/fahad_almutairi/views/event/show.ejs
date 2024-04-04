@@ -1,0 +1,39 @@
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    <div class="row mt-4">
+
+        <div class="col-md-9 offset-md-1">
+            <div class="card">
+                <img class="card-img-top"
+                    src="<%= `http://localhost:3000/events/${event.image_url}` %>"
+                    alt="Card image cap" >
+
+                
+                <div class="card-body">
+                    <h5 class="card-title"><%=event.title %></h5>
+                    <hr>
+                    <p class="card-text"><%=event.description%></p>
+                    <p><%=event.price%></p>
+                    <p><%=event.location%></p>
+                    <p><span class="badge badge-secondary"><%=event.date.toDateString()%></span></p>
+
+                    <% if ((user) && (user.id == event.user_id )) {%>
+                    <a href="<%= '/events/edit/' + event.id %>" class="btn btn-primary">Edit</a>
+                    <button class="btn btn-danger" onclick="deleteEvent()" id="deleteBtn"
+                        data-id="<%= event.id%>">Delete</button>
+                    <%}%>
+                    <form action="/events/cart" method="POST">
+                        <input type="hidden" id="product_id" name="product_id" value="<%= event.product_id%>">
+                        <button type="submit" class="btn btn-success" style="margin-top: 15px;">Add to cart</button>
+                      </form>
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/footer.ejs') -%>

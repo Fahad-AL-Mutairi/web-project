@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(123, 115, 131); /* Used if the image is unavailable */
+  height: 1440px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+text-align: center;
+}
+form{
+background-image: none;
+background-color: lightblue;
+
+}
+footer{
+  margin-bottom: 0px;
+  margin-top: 5rem;
+  background-color: rgb(138, 136, 136);
+  color: wheat;
+  text-align: center;
+}
+nav{
+  background-color: rgb(138, 136, 136);
+  color: wheat;
+
+}
